@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="limiter">
+    <div class="container-login100 bg">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form">
+
+                <span class="login100-form-title p-b-20 p-t-10">Employee List</span>
+                <div class="table100 ver6 m-b-110">
+                    <table data-vertable="ver6">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="column100 column1" data-column="column1">User Name</th>
+                                <th class="column100 column2" data-column="column2">Password</th>
+                                <th class="column100 column3" data-column="column3">Is Remeber</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let emp of employee" class="row100">
+                                <td class="column100 column1" data-column="column1">{{emp.username}}</td>
+                                <td class="column100 column2" data-column="column2">{{emp.password}}</td>
+                                <td class="column100 column3" data-column="column3">{{emp.isremeber}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" (click)="goBack()">Back</button>
+                    <!-- <button class="login100-form-btn" (click)="logOut()">LogOut</button> -->
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

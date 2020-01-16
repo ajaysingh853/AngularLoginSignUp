@@ -1,0 +1,101 @@
+<div class="limiter">
+    <div class="container-login100 bg">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <!-- <span class="login100-form-logo">
+          <i class="zmdi zmdi-landscape"></i>
+        </span> -->
+
+                <span class="login100-form-title p-b-20 p-t-10">Sign Up</span>
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter First Name">
+                    <input class="input100" type="text" name="firstName" placeholder="First Name" formControlName="firstName">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+
+                </div>
+
+                <div class="wrap-input100">
+                    <input class="input100" type="text" name="lastName" placeholder="Last Name" formControlName="lastName">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                </div>
+                <div *ngIf="submitted && f.gender.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.gender.errors.required">Gender is required</div>
+                </div>
+                <div class="wrap-input100">
+                    <span class="input-mini" style="color: white;">Gender:
+            <select formControlName="gender" class="input100" style="color:black;">
+              <option value="" selected>--Select--</option>
+              <option value="0">Male</option>
+              <option value="1">Female</option>
+            </select>
+          </span>
+
+
+                    <!-- <span class="input-mini" style="color: white;"> <input type="radio" name="gender" value="1"> </span>
+                    <span class="input-mini" style="color: white;">  <input type="radio" name="gender" value="0"></span> -->
+                    <!-- <span class="focus-input100" data-placeholder="&#xf207;"></span> -->
+                </div>
+
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+                <div class="wrap-input100">
+                    <input class="input100" type="email" name="email" placeholder="email" formControlName="email">
+                    <span class="focus-input100" data-placeholder="&#xf003;"></span>
+
+                </div>
+
+                <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.mobileNo.errors.required">Mobile Number is required</div>
+                    <div *ngIf="f.mobileNo.errors.minlength || f.mobileNo.errors.maxlength">Mobile Number must be at least 10 digit</div>
+                    <!-- <div *ngIf="f.mobileNo.errors.maxlength">Mobile Number must be at least 10 digit</div> -->
+                </div>
+                <div class="wrap-input100">
+                    <input class="input100" type="text" name="mobileNo" placeholder="Mobile Number" formControlName="mobileNo">
+                    <span class="focus-input100" data-placeholder="&#xf2be;"></span>
+
+                </div>
+
+                <div *ngIf="submitted && f.userName.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.userName.errors.required">UserName is required</div>
+                </div>
+                <div class="wrap-input100">
+                    <input class="input100" type="text" name="userName" placeholder="User Name" formControlName="userName">
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+
+                </div>
+
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+                <div class="wrap-input100">
+                    <input class="input100" type="password" name="password" placeholder="Password" formControlName="password">
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+
+                </div>
+
+                <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback" style="color:darkred;">
+                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                </div>
+                <div class="wrap-input100">
+                    <input class="input100" type="text" name="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">SignUp</button>
+                    <button class="login100-form-btn" type="reset" (click)="onReset()">Cancel</button>
+                </div>
+
+                <div class="text-center p-t-10">
+                    <a class="txt1" href="#" routerLink="/login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

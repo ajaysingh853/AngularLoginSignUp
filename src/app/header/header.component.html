@@ -1,0 +1,6 @@
+<div class="container-login100-form-btn" *ngIf="islogin" style="justify-content: left;">
+
+    <input type="button" class="login100-form-btn" routerLink="/home" value="Home" />
+    <input type="button" class="login100-form-btn" routerLink="/emplist" value="List" />
+    <input type="button" class="login100-form-btn" value="Logout" (click)="logOut()" />
+</div>
